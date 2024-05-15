@@ -6,8 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>雷雷和喵喵的客厅</title>
 	<style>
+		:root {
+			--wall: #000;
+			--bgColor: #ccc;
+			--border: #eee;
+			--hoverColor: green;
+			--centerColor: rgba(255, 0, 0, 0.443);
+		}
+
 		body {
-			background: #ccc;
+			background: var(--bgColor);
 			margin: 0;
 			padding: 0;
 			width: 100%;
@@ -33,12 +41,14 @@
 		}
 
 		.wall {
-			background-color: #000;
+			background-color: var(--wall);
 			position: absolute;
 		}
 
 		.wall:hover {
-			background: green;
+			cursor: pointer;
+			background: var(--hoverColor);
+			color: var(--hoverColor);
 		}
 
 		.wall-top {
@@ -86,12 +96,12 @@
 			height: calc(56.9% - 6px);
 			/* 1255 / 7476 = 16.78 */
 			width: calc(16.78% - 6px);
-			border: 3px solid #000;
-			background: #ccc;
+			border: 3px solid var(--wall);
+			background: var(--bgColor)
 		}
 
 		.wall-kichen:hover {
-			border: 3px solid green;
+			border: 3px solid var(--hoverColor);
 		}
 
 
@@ -102,7 +112,7 @@
 			left: 22.13%;
 			height: 100%;
 			width: 0;
-			border: 1px dashed red;
+			border: 1px dashed var(--centerColor);
 			z-index: 999;
 		}
 
@@ -113,7 +123,7 @@
 			left: 50.75%;
 			height: 100%;
 			width: 0;
-			border: 1px dashed red;
+			border: 1px dashed var(--centerColor);
 			z-index: 999;
 		}
 
@@ -124,7 +134,7 @@
 			/* 比例计算 25 / 7476 */
 			width: calc(0.334% - 1px);
 			height: 100%;
-			border-right: 1px dashed #eee;
+			border-right: 1px dashed var(--border);
 		}
 
 		#cabinetContainer {
@@ -133,8 +143,8 @@
 			left: 0.334%;
 			width: calc(100% - 0.334%);
 			height: 17.5%;
-			background: #ccc;
-			border-bottom: 1px solid #eee;
+			background: var(--bgColor);
+			border-bottom: 1px solid var(--border);
 
 			display: flex;
 		}
@@ -142,7 +152,7 @@
 		#cabinetContainer .cabinet {
 			text-align: center;
 			height: 100%;
-			border: 1px solid #eee;
+			border: 1px solid var(--border);
 			border-bottom: none;
 		}
 	</style>
@@ -175,11 +185,11 @@
 	</div>
 </body>
 <script>
-	const TOTAL_WIDTH = 7479 - 250
+	const TOTAL_WIDTH = 7276 // 7476 - 200
 	let enterWidth = 2100
-	let kitchenWidth = 1150
-	let showWidth = 430
-	let tvWidth = 3546
+	let kitchenWidth = 1100
+	let showWidth = 400
+	let tvWidth = 3676
 
 	const enterDom = document.querySelector('#enter')
 	const kitchenDom = document.querySelector('#kitchen')
