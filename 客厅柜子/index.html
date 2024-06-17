@@ -185,13 +185,14 @@
 	</div>
 </body>
 <script>
-	const TOTAL_WIDTH = 7226 // 7476 - 250
+	const TOTAL_WIDTH = 7276 // 7476 - 200
 	let enterWidth = 2100
 	let kitchenWidth = 1100
 	let showWidth = 400
 	let tvWidth = 3676
 
 	if (enterWidth + kitchenWidth + showWidth + tvWidth > TOTAL_WIDTH) alert('尺寸计算错误')
+	console.log(enterWidth + kitchenWidth + showWidth + tvWidth, TOTAL_WIDTH);
 
 	const enterDom = document.querySelector('#enter')
 	const kitchenDom = document.querySelector('#kitchen')
